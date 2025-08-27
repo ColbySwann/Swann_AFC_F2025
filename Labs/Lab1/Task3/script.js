@@ -10,12 +10,12 @@ function addColor(colorArray) {
     // Step 3: Assigns the value of the input from the user to the newColor constant
     const newColor = prompt("Enter a color to add:");
 
-    // Step 4:
+    // Step 4:Call the .unshift method to the colorArray object to add the newColor value to the beginning of the array
     colorArray.unshift(newColor);
 
-    // Step 5: Log the updated array
+    // Step 5: Sends the updated colors to the array with a String and the value of colorArray
     console.log("Updated colors:", colorArray);
 }
 
-// Step 6: Call the function with the colors array
+// Step 6: calls the function addColor and passes the existing values within the colors array
 addColor(colors);

@@ -2,9 +2,9 @@
 // Name: Colby Swann
 // Task7 - Grade Classification
 
-// Step 1: Create a fat arrow function named classifyGrade
+// Step 1: Create a fat arrow function named classifyGrade with a grade string passed as the parameter
 const classifyGrade = (grade) =>
-    // Step 2: Use ternary operators to classify each grade
+    // Step 2: Use ternary operators to classify each grade instead of a traditional if/else statement
     (grade >= 90) ? "A" :
         (grade >= 80) ? "B" :
             (grade >= 70) ? "C" :
@@ -17,7 +17,7 @@ const input = prompt("Enter a grade (0-100):");
 // Step 4: Convert the input into a number
 const grade = Number(input);
 
-// Step 5: Validate the input
+// Step 5: Validate the input has a number value and pass an error if value is not a number
 if (Number.isNaN(grade)) {
     console.log("Error: Please enter a valid number.");
 } else {

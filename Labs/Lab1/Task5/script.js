@@ -2,12 +2,12 @@
 // Name: Colby Swann
 // Task5 - Temperature Classifier
 
-// Step 1: Create a traditional function named classifyTemperature
+// Step 1: Create a traditional function named classifyTemperature and set the parameter as a string value called Celsius
 function classifyTemperature(celsius) {
-    // Step 2: Convert Celsius into Fahrenheit
+    // Step 2: Convert Celsius into Fahrenheit as a number
     const fahrenheit = (celsius * (9 / 5)) + 32;
 
-    // Step 3: Define blocks of temperature using conditionals
+    // Step 3: Define blocks of temperature in Fahrenheit using conditionals
     if (fahrenheit > 100) {
         return "Hot";
     } else if (fahrenheit > 80) {
@@ -22,7 +22,7 @@ function classifyTemperature(celsius) {
 // Step 4: Prompt the user for a temperature in Celsius
 const input = prompt("Enter temperature in Celsius:");
 
-// Step 5: Convert input into a number
+// Step 5: Convert input into a number and assign it to the celsius constant
 const celsius = Number(input);
 
 // Step 6: Validate the input (must be a number); Print error if NaN
