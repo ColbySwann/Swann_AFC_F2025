@@ -10,7 +10,7 @@ const getToday = () => {
 // Step 2: Call the function to get the current date
 const today = getToday();
 
-// Step 3: Get the weekday name
+// Step 3: Get the name of the current day by looking in an array of days and indexes off today's date
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const weekday = days[today.getDay()];
 

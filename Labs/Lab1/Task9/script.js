@@ -4,7 +4,7 @@
 
 //Make a program that will log the current day by Name
 
-// Step 1: Create a fat arrow function to determine the current day
+// Step 1: Create a fat arrow function to determine the current day with no parameters
 const getWeekday = () => {
     // Step 2: Use the Date object to get today's date
     const today = new Date();
