@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Apply Now</title>
+</head>
+<body>
+<h1>Apply Now</h1>
+<a href="index.html">Home</a>
+<a href="menu.html">Menu</a>
+<a href="hiring.html">Apply Now</a>
+<form action="" method="get">
+    <label for="fname">First Name:</label>
+    <input type="text" name="fname" id="fname" placeholder="First Name" required minlength="1" maxlength="20">
+    <br>
+    <label for="lname">Last Name:</label>
+    <input type="text" name="lname" id ="lname" placeholder="Last Name" minlength="1" maxlength="20">
+    <br>
+    <label for="address1">Address</label>
+    <input type="text" name="address1" id="address1" placeholder="Primary Address" required>
+    <br>
+    <label for="city1">City</label>
+    <input type="text" name="city" id="city1" placeholder="City" required maxlength="29">
+    <label for="state1">States</label>
+    <select name="state" id="state1">
+        <option value="tx">TX</option>
+        <option value="tn">TN</option>
+        <option value="al">AL</option>
+    </select>
+    <br>
+    <label for="address2">Alternate Address</label>
+    <input type="text" name="address2" id="address2" placeholder="Primary Address">
+    <br>
+    <label for="city2">City</label>
+    <input type="text" name="city" id="city2" placeholder="City" maxlength="29">
+    <label for="state2">States</label>
+    <select name="state" id="state2">
+        <option value="tx">TX</option>
+        <option value="tn">TN</option>
+        <option value="al">AL</option>
+    </select>
+    <br>
+    <label for="age">Age</label>
+    <input type="number" name="age" id="age" required min="21" max="99">
+    <br>
+    <label for="phone">Phone</label>
+    <input type="tel" name="phone" id="phone" placeholder="(XXX) XXX-XXXX" pattern="[0-9]{3}-?[0-9]{3}-?[0-9]{4}" required>
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" placeholder="Email">
+    <br>
+    <label for="password">Password</label>
+    <input type="text" name="password" id="password" required minlength="8" maxlength="12" pattern="((?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*\W)\w.{6,18}\w)">
+    <br>
+    <label for="IsMarried">Are you Married?</label>
+    <input type="radio" name="IsMarried" id="IsMarried" value="yes">Yes
+    <input type="radio" name="IsMarried" id="IsMarriedFalse" value="no" checked>No
+    <br>
+    <fieldset>
+        <legend>Choose your favorite colors</legend>
+
+        <div>
+            <label for="blue">Blue</label>
+            <input type="checkbox" name="blue" id="blue">
+        </div>
+        <div>
+            <label for="green">Green</label>
+            <input type="checkbox" name="green" id="green">
+        </div>
+        <div>
+            <label for="red">Red</label>
+            <input type="checkbox" name="red" id="red">
+        </div>
+        <div>
+            <label for="purple">Purple</label>
+            <input type="checkbox" name="purple" id="purple">
+        </div>
+        <div>
+            <label for="yellow">Yellow</label>
+            <input type="checkbox" name="yellow" id="yellow">
+        </div>
+    </fieldset>
+    <br>
+    <label for="moreInfo">Additional Information about yourself.</label>
+    <br>
+    <textarea name="moreInfo" id="moreInfo" cols="30" rows="4" maxlength="30"></textarea>
+    <br>
+    <button type="submit">Submit</button>
+    <button type="reset">Reset Form</button>
+</form>
+<a href="index.html">Home</a>
+<a href="menu.html">Menu</a>
+<a href="hiring.html">Apply Now</a>
+</body>
+</html>
