@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS Demo 1</title>
+
+    <style>
+        selector{
+
+        }
+        .dog.cat{
+            background-color: aquamarine;
+        }
+        .dog .cat{
+            background-color: hotpink;
+        }
+    </style>
+
+<!--All additional styling option listed before css-->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<p>Hello World!</p>
+<p>Goodbye</p>
+<ul style="background-color: yellow">
+    <li class="dog"><span class="cat">Dog</span></li>
+    <li style="background-color: red" class="cat">Cat</li>
+    <li class="dog cat">Lizard</li>
+</ul>
+<div class="dog">
+    <ul>
+        <li>Nothing</li>
+        <li>
+            <p class="cat">Kitty</p>
+        </li>
+    </ul>
+</div>
+
+
+
+<!--JS needs to be last for now-->
+<script src="script.js"></script>
+
+
+</body>
+</html>

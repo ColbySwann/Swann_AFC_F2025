@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #dc572c;
+}
+
+p{
+    background-color: blue;
+    padding: 10px;
+    border-style: ridge;
+    border-width: 10px;
+    border-color: pink;
+    text-align: center;
+    width: max-content;
+    margin: 50px auto -50px;
+    font-family: "Orbitron", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    text-shadow: 3px 3px 2px lightblue;
+}
+
+p.western{
+    font-family: "Rye", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+
+}
+
+
