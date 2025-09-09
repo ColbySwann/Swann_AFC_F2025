@@ -1,0 +1,24 @@
+h1:hover{
+    background-color: purple;
+}
+button:hover{
+    color: red;
+}
+input:hover{
+    border: 10px solid blue;
+    cursor: grab;
+}
+input:focus{
+    background-color: green;
+}
+button:active {
+    background-color: darkblue;
+    font-size: 40px;
+    font-family: "Wingdings 2", sans-serif;
+}
+h1:active {
+    font-size: 100px;
+}
+a[target='_blank']:hover{
+   background-color: pink;
+}
