@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DOM Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--<h1>Avengers</h1>-->
+<!--<h1>X-Men</h1>-->
+
+<!--<ul>-->
+<!--    <li id="teamLeader">Wolverine</li>-->
+<!--    <li class="mutant">Cyclops</li>-->
+<!--    <li class="mutant">ShadowCat</li>-->
+<!--</ul>-->
+
+<!--<label for="pw">Password: </label>-->
+<!--<input type="password" name="password" id="pw">-->
+
+<!--<br>-->
+<!--<br>-->
+
+<!--<a href="https://www.costco.com">Costco</a>-->
+<!--<br>-->
+
+<h1>X-Men Roster Application</h1>
+
+<form action="/cerebro">
+    <label for="first_name">First Name:</label>
+    <input type="text" name="fname" id="first_name">
+    <br /> <br />
+    <button type="submit">Join Team</button>
+</form>
+
+<script>
+
+    // let xmenTeamLeader = document.getElementById("teamLeader")
+    // console.log(xmenTeamLeader)
+    //
+    // let mutants = document.getElementsByClassName("mutant")
+    // console.log(mutants)
+    //
+    // let allXmen = document.getElementsByTagName("li");
+    // console.log(allXmen)
+    //
+    // let selectedXmen = document.querySelectorAll(".mutant");
+    // console.log(selectedXmen);
+    //
+    // let allTeams = document.querySelectorAll("h1");
+    // console.log(allTeams)
+    //
+    // // allTeams.style.color = "red";
+    // // allTeams.style.border = "green 3px solid";
+    // // allTeams.style.fontSize = "48px";
+    //
+    // let teamContent = allTeams[0].textContent;
+    // console.log(teamContent);
+    //
+    // allTeams[1].textContent = "New Mutants";
+    //
+    // let input = document.getElementById("pw")
+    //
+    // let inputType = input.type;
+    // console.log(inputType)
+    //
+    // input.type = "number";
+    //
+    // let anchor = document.getElementsByTagName("a");
+    //
+    // let anchorHref = anchor[0].href
+    // console.log(anchorHref);
+    //
+    // anchor[0].href = "https://amazon.com"
+
+    const rosterHeader = document.querySelector("h1");
+
+    rosterHeader.addEventListener("click", (event)=>{
+        console.log("You clicked the h1.");
+
+        rosterHeader.textContent = "Avengers Assemble!";
+    });
+
+    const form = document.getElementsByTagName("form");
+    form[0].addEventListener("submit", (event)=>{
+        event.preventDefault();
+        let firstName = document.getElementById("first_name")
+        console.log("Submitted");
+        console.log("Value from first name input: ", firstName.value);
+    })
+
+</script>
+</body>
+</html>

@@ -1,56 +1,76 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Menu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Menu</h1>
-<a href="index.html">Home</a>
-<a href="menu.html">Menu</a>
-<a href="hiring.html">Apply Now</a>
-<table border="5">
-    <tr>
-        <th>Item Name</th>
-        <th>Description</th>
-        <th>Price</th>
-    </tr>
-    <tr>
-        <td>Lamb leg</td>
-        <td>Leg of Lamb roasted on a split on an open fire</td>
-        <td>$78</td>
-    </tr>
-    <tr>
-        <td>Pork and Beans</td>
-        <td>Plate of pork and beans served with some bread just like the cowboys used to eat</td>
-        <td>$15</td>
-    </tr>
-    <tr>
-        <td>Quantum Flame Steak</td>
-        <td>Wagyu beef genetically perfected and seared with a quantum flame torch</td>
-        <td>$89</td>
-    </tr>
-    <tr>
-        <td>Roast Saddle of Mutton</td>
-        <td>Large roast carved tableside served with onion sauce</td>
-        <td>$67</td>
-    </tr>
-    <tr>
-        <td>Garlic & Herb Moretum</td>
-        <td>Roman inspired herbed cheese spread</td>
-        <td>$13</td>
-    </tr>
-    <tr>
-        <td>Nile Valley Stew</td>
-        <td>A hearty Ancient Egyptian classic of slow-simmered fava beans</td>
-        <td>$23</td>
-    </tr>
+<nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html" style="font-family: Tagesschrift, system-ui">CHRONOBITE</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html" id="home-button">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="menu.html" id="menu-button">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="hiring.html" id="hiring-button">Apply Now</a>
+                </li>
+            </ul>
+            <span class="navbar-text">
 
-</table>
+      </span>
+        </div>
+    </div>
+</nav>
+<div class="container-sm" style="height: 5%; position: relative; top: 3%">
+    <div class="row" style="height: 100%">
+        <div class="col-lg-5">
 
-<a href="index.html">Home</a>
-<a href="menu.html">Menu</a>
-<a href="hiring.html">Apply Now</a>
+        </div>
+        <div class="col-lg-1" style="display: flex; justify-content: center">
+            <button type="button" class="btn btn-outline-light prev" id="prev">Prev</button>
+        </div>
+        <div class="col-lg-1" style="display:flex; justify-content: center">
+            <button type="button" class="btn btn-outline-light next" id="next">Next</button>
+        </div>
+        <div class="col-lg-5">
+
+        </div>
+    </div>
+</div>
+
+<div class="container-lg bg-body-tertiary" data-bs-theme="dark" style="height: 70%; position: relative; top: 5%" id="container1">
+    <div class="row" style="height: 100%; border-radius: 15px">
+        <div class="col-lg-6" style="height: 100%; padding: 0">
+            <img src="images/cristi-caval-V3F18sonn7k-unsplash.jpg" alt="image of menu item" id="menu-image" style="height: 100%; width: 100%">
+        </div>
+        <div class="col-lg-6 bg-body-tertiary" style="height: 100%">
+            <div class="row">
+                <h1 id="menu-title">Nile Valley Stew</h1>
+                <p class="menu_description" id="menu-description">A hearty Ancient Egyptian classic of slow simmered fava beans</p>
+                <p class="menu_description" id="menu-price">Price: $23</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="script.js"></script>
 </body>
 </html>
