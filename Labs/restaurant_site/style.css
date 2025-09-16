@@ -1,3 +1,7 @@
+
+/*Primary color = midnight blue to emulate the futuristic theme; accent of orange to show the prehistoric fire colors and the transition from old to new*/
+
+
 *{
     margin: 0;
     padding: 0;
@@ -172,5 +176,72 @@ h1{
     font-family: Tagesschrift, sans-serif;
 }
 #menu-price{
+    font-family: Tagesschrift, sans-serif;
+}
+#application-container{
+    position: relative;
+    top: 3%;
+}
+#application-row1{
+
+}
+#inputEmail-label{
+    color: darkorange;
+    font-family: Tagesschrift, sans-serif;
+}
+#inputAddress-label{
+    color: darkorange;
+    font-family: Tagesschrift, sans-serif;
+}
+#inputAddress2-label{
+    color: darkorange;
+    font-family: Tagesschrift, sans-serif;
+}
+#inputCity-label {
+    color: darkorange;
+    font-family: Tagesschrift, sans-serif;
+}
+#inputState-label{
+    color: darkorange;
+    font-family: Tagesschrift, sans-serif;
+}
+#inputPassword4-label{
+    color: darkorange;
+    font-family: Tagesschrift, sans-serif;
+}
+#inputZip-label{
+    color: darkorange;
+    font-family: Tagesschrift, sans-serif;
+}
+#inputPhone-label{
+    color: darkorange;
+    font-family: Tagesschrift, sans-serif;
+}
+#inputAge-label{
+    color: darkorange;
+    font-family: Tagesschrift, sans-serif;
+}
+#inlineCheckbox1-label{
+    color: darkorange;
+    font-family: Tagesschrift, sans-serif;
+}
+#inlineCheckbox2-label{
+    color: darkorange;
+    font-family: Tagesschrift, sans-serif;
+}
+#inlineCheckbox3-label{
+    color: darkorange;
+    font-family: Tagesschrift, sans-serif;
+}
+#favoriteColor-label{
+    color: darkorange;
+    font-family: Tagesschrift, sans-serif;
+}
+.form-check-label{
+    color: darkorange;
+    font-family: Tagesschrift, sans-serif;
+}
+#textarea-label{
+    color: darkorange;
     font-family: Tagesschrift, sans-serif;
 }
