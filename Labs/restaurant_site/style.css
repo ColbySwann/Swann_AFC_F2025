@@ -7,6 +7,8 @@
     padding: 0;
     border: none;
     box-sizing: border-box;
+    color: darkorange;
+    font-family: Tagesschrift, sans-serif;
 }
 html, body{
     margin: 0;
@@ -88,14 +90,17 @@ div.Logo{
 .egypt-description{
     font-family: Papyrus, serif;
     font-size: medium;
+    color: white;
 }
 .future-description{
     font-family: Orbitron, sans-serif;
     font-size: medium;
+    color: white;
 }
 #future{
     font-family: Orbitron, sans-serif;
     font-size: large;
+    color: white;
 }
 .navbar-brand{
     font-size: 34px;
@@ -201,20 +206,11 @@ h1{
     font-weight: 400;
     font-style: normal;
 }
-#welcome{
-    font-family: Tagesschrift, sans-serif;
-}
-#welcome2{
-    font-family: Tagesschrift, sans-serif;
-}
-#menu-title{
-    font-family: Tagesschrift, sans-serif;
-}
 #menu-description{
-    font-family: Tagesschrift, sans-serif;
+    color: white;
 }
 #menu-price{
-    font-family: Tagesschrift, sans-serif;
+    color: white;
 }
 #menu-image{
     height: 100%;
@@ -230,80 +226,15 @@ h1{
     border-color: midnightblue;
     border-width: 5px;
 }
-#inputEmail-label{
-    color: darkorange;
-    font-family: Tagesschrift, sans-serif;
-}
-#inputAddress-label{
-    color: darkorange;
-    font-family: Tagesschrift, sans-serif;
-}
-#inputAddress2-label{
-    color: darkorange;
-    font-family: Tagesschrift, sans-serif;
-}
-#inputCity-label {
-    color: darkorange;
-    font-family: Tagesschrift, sans-serif;
-}
-#inputState-label{
-    color: darkorange;
-    font-family: Tagesschrift, sans-serif;
-}
-#inputPassword4-label{
-    color: darkorange;
-    font-family: Tagesschrift, sans-serif;
-}
-#inputZip-label{
-    color: darkorange;
-    font-family: Tagesschrift, sans-serif;
-}
-#inputPhone-label{
-    color: darkorange;
-    font-family: Tagesschrift, sans-serif;
-}
-#inputAge-label{
-    color: darkorange;
-    font-family: Tagesschrift, sans-serif;
-}
-#inlineCheckbox1-label{
-    color: darkorange;
-    font-family: Tagesschrift, sans-serif;
-}
-#inlineCheckbox2-label{
-    color: darkorange;
-    font-family: Tagesschrift, sans-serif;
-}
-#inlineCheckbox3-label{
-    color: darkorange;
-    font-family: Tagesschrift, sans-serif;
-}
-#favoriteColor-label{
-    color: darkorange;
-    font-family: Tagesschrift, sans-serif;
-}
-.form-check-label{
-    color: darkorange;
-    font-family: Tagesschrift, sans-serif;
-}
-#textarea-label{
-    color: darkorange;
-    font-family: Tagesschrift, sans-serif;
-}
+
 #phoneError{
     display: none;
-    color: darkorange;
-    font-family: Tagesschrift, sans-serif;
 }
 #phoneOk{
     display: none;
-    color: darkorange;
-    font-family: Tagesschrift, sans-serif;
 }
 #ageError{
     display: none;
-    color: darkorange;
-    font-family: Tagesschrift, sans-serif;
 }
 #nav-image{
     font-family: Tagesschrift, system-ui;
@@ -331,14 +262,16 @@ h1{
     min-height: 200px
 }
 #p-roman{
-    font-family: 'Times New Roman', system-ui; font-size: 24px
+    font-family: 'Times New Roman', system-ui; font-size: 24px; color: white;
 }
 #horse{
     font-size: 24px;
+    color: saddlebrown;
 }
 #p-romanDesc{
     font-family: 'Times New Roman', system-ui;
     font-size: medium;
+    color: white;
 }
 #col2{
     align-content: center;
@@ -348,6 +281,7 @@ h1{
     font-family: Papyrus, serif;
     font-size: 24px;
     margin-bottom: 0;
+    color: white;
 }
 #col3{
     align-content: center;
