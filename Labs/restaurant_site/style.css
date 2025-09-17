@@ -59,6 +59,18 @@ body{
     height: 25%;
 
 }
+.egypt-description{
+    font-family: Papyrus, serif;
+    font-size: medium;
+}
+.future-description{
+    font-family: Orbitron, sans-serif;
+    font-size: medium;
+}
+#future{
+    font-family: Orbitron, sans-serif;
+    font-size: large;
+}
 .navbar-brand{
     font-size: 34px;
     color: #d18615;
@@ -244,4 +256,22 @@ h1{
 #textarea-label{
     color: darkorange;
     font-family: Tagesschrift, sans-serif;
+}
+#phoneError{
+    display: none;
+    color: darkorange;
+    font-family: Tagesschrift, sans-serif;
+}
+#phoneOk{
+    display: none;
+    color: darkorange;
+    font-family: Tagesschrift, sans-serif;
+}
+#ageError{
+    display: none;
+    color: darkorange;
+    font-family: Tagesschrift, sans-serif;
+}
+#nav-image{
+    font-family: Tagesschrift, system-ui;
 }

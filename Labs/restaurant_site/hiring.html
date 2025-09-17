@@ -13,7 +13,7 @@
 <body id="hiring-page">
 <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.html" style="font-family: Tagesschrift, system-ui"><img src="images/time-machine.png" alt="Time Machine"></a>
+        <a class="navbar-brand" href="index.html" id="nav-image"><img src="images/time-machine.png" alt="Time Machine"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -36,7 +36,7 @@
     </div>
 </nav>
 <div class="container-sm" data-bs-theme="dark" id="application-container">
-    <form class="row g-3 bg-body-tertiary" data-bs-theme="dark" name="myForm" id="application-row1">
+    <form class="row g-2 bg-body-tertiary" data-bs-theme="dark" name="myForm" id="application-row1">
         <div class="col-6">
             <input type="text" class="form-control" placeholder="First name" id="fname" aria-label="First name">
         </div>
@@ -47,16 +47,16 @@
             <label for="inputEmail4" class="form-label" id="inputEmail-label">Email</label>
             <input type="email" class="form-control" name="email" id="inputEmail4" aria-label="Email">
         </div>
-        <div class="col-md-2">
+        <div class="col-md-3">
             <label for="inputAge" class="form-label" id="inputAge-label">Age</label>
             <input type="number" class="form-control" name="age" id="inputAge">
-            <div id="ageError" class="error" role="alert" aria-live="polite" style="display:none"></div>
+            <div id="ageError" class="error" role="alert" aria-live="polite"></div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <label for="inputPhone" class="form-label" id="inputPhone-label">Phone</label>
             <input type="tel" class="form-control" name="phone" id="inputPhone" placeholder="(000)-000-0000">
-            <div id="phoneError" class="error" role="alert" aria-live="polite" style="display:none"></div>
-            <div id="phoneOk" class="ok" style="display:none">Phone looks good and will be saved as <span id="phoneNormalized"></span></div>
+            <div id="phoneError" class="error" role="alert" aria-live="polite"></div>
+            <div id="phoneOk" class="ok">Saved as <span id="phoneFormatted"></span></div>
         </div>
         <div class="col-12">
             <label for="inputAddress" class="form-label" id="inputAddress-label">Address</label>
@@ -130,51 +130,15 @@
                 <textarea class="form-control" id="exampleFormControlTextarea1" name="textarea" rows="4" maxlength="30" placeholder="Write any more information you would like to know"></textarea>
             </div>
         </div>
-        <div class="col-12">
+        <div class="col-1">
             <button type="submit" class="btn btn-primary" id="submit-btn">Submit</button>
+        </div>
+        <div class="col-6">
+            <button type="reset" class="btn btn-primary" id="reset-btn">Reset</button>
         </div>
     </form>
 </div>
 
-<!--    <label for="IsMarried">Are you Married?</label>-->
-<!--    <input type="radio" name="IsMarried" id="IsMarried" value="yes">Yes-->
-<!--    <input type="radio" name="IsMarried" id="IsMarriedFalse" value="no" checked>No-->
-<!--    <br>-->
-<!--    <fieldset>-->
-<!--        <legend>Choose your favorite colors</legend>-->
-
-<!--        <div>-->
-<!--            <label for="blue">Blue</label>-->
-<!--            <input type="checkbox" name="blue" id="blue">-->
-<!--        </div>-->
-<!--        <div>-->
-<!--            <label for="green">Green</label>-->
-<!--            <input type="checkbox" name="green" id="green">-->
-<!--        </div>-->
-<!--        <div>-->
-<!--            <label for="red">Red</label>-->
-<!--            <input type="checkbox" name="red" id="red">-->
-<!--        </div>-->
-<!--        <div>-->
-<!--            <label for="purple">Purple</label>-->
-<!--            <input type="checkbox" name="purple" id="purple">-->
-<!--        </div>-->
-<!--        <div>-->
-<!--            <label for="yellow">Yellow</label>-->
-<!--            <input type="checkbox" name="yellow" id="yellow">-->
-<!--        </div>-->
-<!--    </fieldset>-->
-<!--    <br>-->
-<!--    <label for="moreInfo">Additional Information about yourself.</label>-->
-<!--    <br>-->
-<!--    <textarea name="moreInfo" id="moreInfo" cols="30" rows="4" maxlength="30"></textarea>-->
-<!--    <br>-->
-<!--    <button type="submit">Submit</button>-->
-<!--    <button type="reset">Reset Form</button>-->
-<!--</form>-->
-<!--<a href="index.html">Home</a>-->
-<!--<a href="menu.html">Menu</a>-->
-<!--<a href="hiring.html">Apply Now</a>-->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 <script src="script.js"></script>
 </body>

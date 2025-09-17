@@ -73,87 +73,134 @@ if (document.body.id === 'menu-page') {
     showItem(currentIndex);
 }else if (document.body.id === 'hiring-page') {
 
+    document.addEventListener("DOMContentLoaded", () => {
+        const form = document.querySelector("#application-row1");
+        const ageInput = document.getElementById("inputAge");
+        const ageError = document.getElementById("ageError");
 
-    const fname = document.getElementById("fname").value;
-    const lname = document.getElementById("lname").value;
-    const email = document.getElementById("inputEmail4").value;
-    let age = document.getElementById("inputAge").value;
-    let phone = document.getElementById("inputPhone").value;
-    let address1 = document.getElementById("inputAddress").value;
-    let address2 = document.getElementById("inputAddress2").value;
-    let city = document.getElementById("inputCity").value;
-    let zip = document.getElementById("inputZip").value;
-    let password = document.getElementById("inputPassword4").value;
-    let moreInfo = document.getElementById("exampleFormControlTextarea1").value
 
-    function validateForm() {
+        const phoneInput = document.getElementById("inputPhone");
+        const phoneError = document.getElementById("phoneError");
+        const phoneOk = document.getElementById("phoneOk");
+        const phoneformattedSpan = document.getElementById("phoneFormatted");
 
-        const regex = /^\d{3}-\d{3}-\d{4}$/;
 
-        let isValid = true;
+        const moreInfo = document.getElementById("exampleFormControlTextarea1");
+        let counter = document.createElement("div");
+        counter.className = "form-text text-muted";
+        moreInfo.insertAdjacentElement("afterend", counter);
 
-        if (fname === "" || /\d/.test(fname)) {
-            alert("Please enter your first name properly.")
-            isValid = false;
+
+        function updateCounter() {
+            const left = 30 - (moreInfo.value || "").length;
+            counter.textContent = `${left} characters remaining`;
         }
-        if (lname === "" || /\d/.test(lname)) {
-            alert("Please enter your last name properly.")
-            isValid = false;
+
+        moreInfo.addEventListener("input", updateCounter);
+        updateCounter();
+
+
+        function formatPhone(input) {
+            if (!input) return null;
+            const digits = input.replace(/\D/g, "");
+            let d = digits;
+            if (d.length === 11 && d.startsWith("1")) d = d.slice(1);
+            if (d.length !== 10) return null;
+            return d.replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3");
         }
-        if (email === "" || !email.includes("@") || !email.includes(".")) {
-            alert("Please enter a valid email address.");
-            isValid = false;
-        }
-        if (age === "" || age < 21 || age > 99) {
-            ageError.style.display = 'block';
-            ageError.textContent = "Enter a valid Age";
-            isValid = false;
-        }
-        if (phone === "" || phone.length < 10 || !egex.text(phone)) {
-            alert("Follow the proper phone number format")
-            isValid = false;
-        }
-        if (isValid) {
-            alert("Form submitted successfully!")
+
+
+        function showPhoneFeedback() {
+            const val = phoneInput.value.trim();
+            const formatted = formatPhone(val);
+            if (!val) {
+                phoneError.style.display = "block";
+                phoneError.textContent = "Phone is required.";
+                phoneOk.style.display = "none";
+                return false;
+            }
+            if (!formatted) {
+                phoneError.style.display = "block";
+                phoneError.textContent = "Please enter 10 digits. Example: 111-222-3333.";
+                phoneOk.style.display = "none";
+                return false;
+            }
+            phoneError.style.display = "none";
+            phoneOk.style.display = "block";
+            phoneformattedSpan.textContent = formatted;
             return true;
-        } else {
-            return false;
         }
+        phoneInput.addEventListener("input", showPhoneFeedback);
+        phoneInput.addEventListener("blur", () => {
+            const formatted = formatPhone(phoneInput.value);
+            if (formatted) phoneInput.value = formatted;
+            showPhoneFeedback();
+        });
 
-    }
 
-    function resetErrors() {
-        document.getElementById("ageError").textContent = ""
-    }
-
-    function updateCounter() {
-        const left = 30 - (moreInfo.value || '').length;
-        remaining.textContent = left;
-    }
-
-    function validateAge() {
-        const original = age.value;
-        if (original === '') {
-            return false;
-        }
-        if (Number(original) < 21 || Number(original) > 99) {
-            return false;
-        } else
+        function validateAge() {
+            const original = ageInput.value;
+            const n = Number(original);
+            if (original === "") {
+                ageError.style.display = "block";
+                ageError.textContent = "Age is required.";
+                return false;
+            }
+            if (!Number.isInteger(n)) {
+                ageError.style.display = "block";
+                ageError.textContent = "Age must be a whole number.";
+                return false;
+            }
+            if (n < 21 || n > 99) {
+                ageError.style.display = "block";
+                ageError.textContent = "Age must be between 21 and 99.";
+                return false;
+            }
+            ageError.style.display = "none";
             return true;
-    }
-
-    age.addEventListener('input', validateAge);
-    age.addEventListener('blur', validateAge);
+        }
 
 
-    moreInfo.addEventListener('input', updateCounter);
-    updateCounter();
+        ageInput.addEventListener("input", validateAge);
+        ageInput.addEventListener("blur", validateAge);
 
-    let submitBtn = document.getElementById('#submit-btn')
 
-    submitBtn.addEventListener('submit', validateForm)
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
 
-    if (validateForm() === true) {
-        console.log(fname + lname + email + age + phone + address1 + address2 + city + document.getElementById("inputState").value + zip + password + moreInfo)
-    }
+
+            const ageOk = validateAge();
+            const phoneOkFlag = showPhoneFeedback();
+            if (!ageOk || !phoneOkFlag) {
+                if (!ageOk) ageInput.focus();
+                else phoneInput.focus();
+                return;
+            }
+
+
+            const submission = {
+                firstName: document.getElementById("fname").value,
+                lastName: document.getElementById("lname").value,
+                email: document.getElementById("inputEmail4").value,
+                age: Number(ageInput.value),
+                phone: formatPhone(phoneInput.value),
+                address1: document.getElementById("inputAddress").value,
+                address2: document.getElementById("inputAddress2").value,
+                city: document.getElementById("inputCity").value,
+                state: document.getElementById("inputState").value,
+                zip: document.getElementById("inputZip").value,
+                password: document.getElementById("inputPassword4").value,
+                status: document.querySelector("input[name=radioDefault]:checked")?.value || null,
+                colors: Array.from(document.querySelectorAll("#favoriteColor input[type=checkbox]:checked")).map(cb => cb.nextElementSibling.textContent),
+                moreInfo: moreInfo.value || ""
+            };
+
+
+            console.log(submission);
+            alert("Form submitted successfully");
+        });
+    });
+
+
+
 }
