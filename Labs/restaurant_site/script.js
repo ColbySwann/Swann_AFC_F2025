@@ -95,9 +95,10 @@ if (document.body.id === 'menu-page') {
             counter.textContent = `${left} characters remaining`;
             if ((moreInfo.value).length > 30) {
                 this.value = this.value.substring(0, 30)
-                this.style.borderColor = 'red'
-            }else {
-                this.style.borderColor = ''
+                this.style.borderColor = 'red';
+            }
+            else{
+                moreInfo.style.borderColor = '';
             }
         }
 
@@ -135,6 +136,7 @@ if (document.body.id === 'menu-page') {
             phoneFormattedSpan.textContent = formatted;
             return true;
         }
+
         phoneInput.addEventListener("input", showPhoneFeedback);
         phoneInput.addEventListener("blur", () => {
             const formatted = formatPhone(phoneInput.value);
