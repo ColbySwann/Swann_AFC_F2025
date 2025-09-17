@@ -12,10 +12,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Tagesschrift&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="home-page">
 <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.html" style="font-family: Tagesschrift, system-ui"><img src="images/time-machine.png" alt="Time Machine"></a>
+        <a class="navbar-brand" href="index.html" id="nav-image"><img src="images/time-machine.png" alt="Time Machine"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -44,18 +44,19 @@
     <div class="row gy-8">
         <h2 class="sub welcome" id="welcome2">Step Through the Tastes of Time</h2>
     </div>
-    <div class="row align-items-end" style="justify-content: space-evenly; min-height: 400px">
-        <div class="col-lg-3 buttons" style="align-content: center; min-height: 200px">
-            <p class="p-0" style="font-family: 'Times New Roman', system-ui; font-size: 24px">Roman Times</p>
-            <i class="fa-solid fa-horse" style="font-size: 24px"></i>
-            <p class="p" style="font-family: 'Times New Roman', system-ui; font-size: medium">Flash back to Ancient Rome to immerse yourself in the sights and flavors of the past</p>
+    <div class="row align-items-end" id="row1">
+        <div class="col-lg-3 buttons" id="col1_index">
+            <p class="p-0" id="p-roman">Roman Times</p>
+<!--            This is where I added the Font Awesome Icon-->
+            <i class="fa-solid fa-horse" id="horse"></i>
+            <p class="p" id="p-romanDesc">Flash back to Ancient Rome to immerse yourself in the sights and flavors of the past</p>
         </div>
-        <div class="col-lg-3 buttons" style="align-content: center; min-height: 200px">
-                <p class="p-0" style="font-family: Papyrus, serif; font-size: 24px; margin-bottom: 0">Ancient Egypt</p>
+        <div class="col-lg-3 buttons" id="col2">
+            <p class="p-0" id="p-egypt">Ancient Egypt</p>
             <img src="images/pyramid.png" alt="pyramid" id="pyramid">
             <p class="egypt-description">Taste the food eaten by the Pharaohs of Ancient Egypt</p>
         </div>
-        <div class="col-lg-3 buttons" style="align-content: center; min-height: 200px">
+        <div class="col-lg-3 buttons" id="col3">
                 <p class="p-0" id="future">The Future</p>
             <img src="images/virtual-reality.png" alt="virtual reality">
             <p class="future-description">Jump into the future and taste the advanced flavors of a new age</p>

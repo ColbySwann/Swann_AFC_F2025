@@ -82,18 +82,23 @@ if (document.body.id === 'menu-page') {
         const phoneInput = document.getElementById("inputPhone");
         const phoneError = document.getElementById("phoneError");
         const phoneOk = document.getElementById("phoneOk");
-        const phoneformattedSpan = document.getElementById("phoneFormatted");
+        const phoneFormattedSpan = document.getElementById("phoneFormatted");
 
 
         const moreInfo = document.getElementById("exampleFormControlTextarea1");
-        let counter = document.createElement("div");
-        counter.className = "form-text text-muted";
+        let counter = document.getElementById("maxCharCount");
         moreInfo.insertAdjacentElement("afterend", counter);
 
 
         function updateCounter() {
             const left = 30 - (moreInfo.value || "").length;
             counter.textContent = `${left} characters remaining`;
+            if ((moreInfo.value).length > 30) {
+                this.value = this.value.substring(0, 30)
+                this.style.borderColor = 'red'
+            }else {
+                this.style.borderColor = ''
+            }
         }
 
         moreInfo.addEventListener("input", updateCounter);
@@ -127,7 +132,7 @@ if (document.body.id === 'menu-page') {
             }
             phoneError.style.display = "none";
             phoneOk.style.display = "block";
-            phoneformattedSpan.textContent = formatted;
+            phoneFormattedSpan.textContent = formatted;
             return true;
         }
         phoneInput.addEventListener("input", showPhoneFeedback);

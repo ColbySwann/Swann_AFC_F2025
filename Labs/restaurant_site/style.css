@@ -38,8 +38,34 @@ div.Logo{
     height: -webkit-fill-available;
 
 }
-body{
+#home-page{
     background: url("images/conner-baker-cbvBcRUFWKk-unsplash.jpg");
+    background-size: 99.99% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.5;
+
+}
+#menu-page{
+    background: url("images/gabriella-clare-marino-lcGz6gZsSsk-unsplash.jpg");
+    background-size: 99.99% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.5;
+
+}
+#hiring-page{
+    background: url("images/cristi-caval-V3F18sonn7k-unsplash.jpg");
     background-size: 99.99% 100%;
     background-position: center center;
     background-repeat: no-repeat;
@@ -84,7 +110,7 @@ body{
     width: 50%;
     height: 60%;
     position: relative;
-    top: 20%;
+    top: 15%;
     border-style: solid;
     border-radius: 15px;
     border-color: midnightblue;
@@ -190,12 +216,19 @@ h1{
 #menu-price{
     font-family: Tagesschrift, sans-serif;
 }
+#menu-image{
+    height: 100%;
+    width: 100%;
+}
 #application-container{
     position: relative;
     top: 3%;
 }
 #application-row1{
-
+    border-style: solid;
+    border-radius: 15px;
+    border-color: midnightblue;
+    border-width: 5px;
 }
 #inputEmail-label{
     color: darkorange;
@@ -275,3 +308,71 @@ h1{
 #nav-image{
     font-family: Tagesschrift, system-ui;
 }
+#menu_buttons-container{
+    height: 5%;
+    position: relative;
+    top: 3%;
+}
+#container1{
+    height: 70%;
+    position: relative;
+    top: 5%;
+    border-style: solid;
+    border-radius: 15px;
+    border-color: midnightblue;
+    border-width: 5px;
+}
+#row1{
+    justify-content: space-evenly;
+    min-height: 400px
+}
+#col1_index{
+    align-content: center;
+    min-height: 200px
+}
+#p-roman{
+    font-family: 'Times New Roman', system-ui; font-size: 24px
+}
+#horse{
+    font-size: 24px;
+}
+#p-romanDesc{
+    font-family: 'Times New Roman', system-ui;
+    font-size: medium;
+}
+#col2{
+    align-content: center;
+    min-height: 200px;
+}
+#p-egypt{
+    font-family: Papyrus, serif;
+    font-size: 24px;
+    margin-bottom: 0;
+}
+#col3{
+    align-content: center;
+    min-height: 200px;
+}
+#menu_buttons-row{
+    height: 100%;
+}
+#prevCol{
+    display: flex;
+    justify-content: center;
+}
+#nextCol{
+    display: flex;
+    justify-content: center;
+}
+#menu-row{
+    height: 100%;
+    border-radius: 15px;
+}
+#menu-col1{
+    height: 100%;
+    padding: 0;
+}
+#menu-col2{
+    height: 100%;
+}
+

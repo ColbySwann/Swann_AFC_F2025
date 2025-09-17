@@ -13,7 +13,7 @@
 <body id="menu-page">
 <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.html" style="font-family: Tagesschrift, system-ui"><img src="images/time-machine.png" alt="Time Machine"></a>
+        <a class="navbar-brand" href="index.html" id="nav-image"><img src="images/time-machine.png" alt="Time Machine"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -35,15 +35,15 @@
         </div>
     </div>
 </nav>
-<div class="container-sm" style="height: 5%; position: relative; top: 3%">
-    <div class="row" style="height: 100%">
+<div class="container-sm" id="menu_buttons-container">
+    <div class="row" id="menu_buttons-row">
         <div class="col-lg-5">
 
         </div>
-        <div class="col-lg-1" style="display: flex; justify-content: center">
+        <div class="col-lg-1" id="prevCol">
             <button type="button" class="btn btn-outline-light prev" id="prev">Prev</button>
         </div>
-        <div class="col-lg-1" style="display:flex; justify-content: center">
+        <div class="col-lg-1" id="nextCol">
             <button type="button" class="btn btn-outline-light next" id="next">Next</button>
         </div>
         <div class="col-lg-5">
@@ -52,12 +52,12 @@
     </div>
 </div>
 
-<div class="container-lg bg-body-tertiary" data-bs-theme="dark" style="height: 70%; position: relative; top: 5%" id="container1">
-    <div class="row" style="height: 100%; border-radius: 15px">
-        <div class="col-lg-6" style="height: 100%; padding: 0">
-            <img src="images/cristi-caval-V3F18sonn7k-unsplash.jpg" alt="image of menu item" id="menu-image" style="height: 100%; width: 100%">
+<div class="container-lg bg-body-tertiary" data-bs-theme="dark" id="container1">
+    <div class="row" id="menu-row">
+        <div class="col-lg-6" id="menu-col1">
+            <img src="images/cristi-caval-V3F18sonn7k-unsplash.jpg" alt="image of menu item" id="menu-image">
         </div>
-        <div class="col-lg-6 bg-body-tertiary" style="height: 100%">
+        <div class="col-lg-6 bg-body-tertiary" id="menu-col2">
             <div class="row">
                 <h1 id="menu-title">Nile Valley Stew</h1>
                 <p class="menu_description" id="menu-description">A hearty Ancient Egyptian classic of slow simmered fava beans</p>
