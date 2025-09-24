@@ -1,6 +1,14 @@
 const isPalindrome = require('../src/index');
 
 describe('Palidrome Structure test', () => {
+    test('does function exist', () => {
+        expect(typeof isPalindrome).toBe("function")
+    })
+
+    test('accept one argument', () => {
+        expect(isPalindrome.length).toBe(1);
+    })
+
     test('should remove spaces', () => {
         expect(isPalindrome("Super Cat is Lame")).toBe(false);
     })
