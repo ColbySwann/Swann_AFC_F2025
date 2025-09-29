@@ -5,11 +5,18 @@ function setUpForm(document) {
 
     form.addEventListener("submit", (evt) => {
         evt.preventDefault()
-        let name = input.value;
+        let name = input.value.trim();
         if (!name){
             output.textContent = "Name is Required"
         }
+        else{
+            output.textContent = `Hello ${name}`;
+        }
     })
+}
+
+if (typeof module !== "undefined" && module.exports){
+    module.exports = setUpForm;
 }
 
 module.exports = {
