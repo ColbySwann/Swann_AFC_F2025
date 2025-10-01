@@ -3,7 +3,7 @@ import './App.css'
 
 function App() {
   const [days, setDays] = useState();
-  const [firstName, setFirstName] = useState()
+  const [firstName, setFirstName] = useState("")
 
   const handleClick = () => {
       setDays(days + 1)
