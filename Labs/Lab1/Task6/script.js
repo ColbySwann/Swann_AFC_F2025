@@ -19,7 +19,7 @@ const updateStudentAge = (array) => {
 
     // Step 5: If the value of student is false the console will print an error message
     if (!student) {
-        console.log("Error: Student not found.");
+        console.log("ErrorPage: Student not found.");
         return;
     }
 
@@ -28,7 +28,7 @@ const updateStudentAge = (array) => {
 
     // Step 7: Validate the input (must be a number): give error message if value is not a number
     if (Number.isNaN(newAge)) {
-        console.log("Error: Age must be a number.");
+        console.log("ErrorPage: Age must be a number.");
         return;
     }
 

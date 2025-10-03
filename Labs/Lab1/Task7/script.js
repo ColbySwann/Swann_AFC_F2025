@@ -19,7 +19,7 @@ const grade = Number(input);
 
 // Step 5: Validate the input has a number value and pass an error if value is not a number
 if (Number.isNaN(grade)) {
-    console.log("Error: Please enter a valid number.");
+    console.log("ErrorPage: Please enter a valid number.");
 } else {
     // Step 6: Call the fat arrow function and log the result
     const classification = classifyGrade(grade);

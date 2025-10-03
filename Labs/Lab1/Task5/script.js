@@ -27,7 +27,7 @@ const celsius = Number(input);
 
 // Step 6: Validate the input (must be a number); Print error if NaN
 if (Number.isNaN(celsius)) {
-    console.log("Error: Please enter a valid number.");
+    console.log("ErrorPage: Please enter a valid number.");
 } else {
     // Step 7: Call the function to classify the temperature
     const classification = classifyTemperature(celsius);

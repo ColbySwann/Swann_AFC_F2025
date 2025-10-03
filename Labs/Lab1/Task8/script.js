@@ -19,7 +19,7 @@ const userItem = prompt("Enter a new item to add to the shopping list:");
 
 // Step 6: Validate input by seeing if the user input is false and pass an error
 if (!userItem) {
-    console.log("Error: You must enter a valid item.");
+    console.log("ErrorPage: You must enter a valid item.");
 } else {
     // Step 7: Call the function a pass the shoppingList and user input as the values
     modifyItem(shoppingList, userItem);

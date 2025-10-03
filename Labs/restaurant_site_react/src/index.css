@@ -1,68 +1,255 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+    color: darkorange;
+    font-family: Tagesschrift, sans-serif;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+    color: #fff !important;
+    background-color: #212529;
+}
+.btn-danger:hover {
+    background-color: #d18615 !important;
+    border-color: #144a66 !important;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+
+/* Headings */
+h1, h2, h3 {
+    color: #ff8c00;
+    font-family: Tagesschrift, sans-serif;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+/* Footer */
+footer {
+    background-color: #144a66;
+    color: white;
+    padding: 1rem;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+
+/* Backgrounds */
+.page-home {
+    background-size: 99.99% 100%;
+    background: url('assets/images/conner-baker-cbvBcRUFWKk-unsplash.jpg') no-repeat fixed center center;
+    background-size: 99.99% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.5;
+}
+
+
+.page-menu {
+    background: url("assets/images/gabriella-clare-marino-lcGz6gZsSsk-unsplash.jpg");
+    background-size: 99.99% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.5;
+
+}
+
+
+.page-hiring {
+    background: url('assets/images/cristi-caval-V3F18sonn7k-unsplash.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+
+/* Themed typography */
+.egypt-description{
+    font-family: Papyrus, serif;
+    font-size: medium;
+    color: white;
+}
+.future-description{
+    font-family: Orbitron, sans-serif;
+    font-size: medium;
+    color: white;
+}
+#future{
+    font-family: Orbitron, sans-serif;
+    font-size: large;
+    color: white;
+}
+
+.navbar-brand{
+    font-family: Tagesschrift, system-ui;
+}
+#horse{
+    font-size: 24px;
+    color: saddlebrown;
+}
+.bg-body-tertiary{
+    --bs-bg-opacity: .7;
+}
+.roman{
+    color: darkorange;
+    position: relative;
+    background-color: midnightblue;
+    border-radius: 15px;
+    align-content: space-around;
+
+}
+.egypt{
+    color: darkorange;
+    position: relative;
+    left: 30%;
+    bottom: 100%;
+    background-color: midnightblue;
+    border-radius: 15px;
+    align-content: space-around;
+}
+.future{
+    color: darkorange;
+    position: relative;
+    left: 30%;
+    bottom: 100%;
+    background-color: midnightblue;
+    border-radius: 15px;
+    border-color: midnightblue;
+    border-width: 10px;
+    align-content: space-around;
+}
+#container1{
+    height: 75%;
+    position: relative;
+    top: 3%;
+    /*border-style: solid;*/
+    /*border-radius: 15px;*/
+    /*border-color: midnightblue;*/
+    /*border-width: 5px;*/
+}
+#row1{
+    justify-content: space-evenly;
+    min-height: 400px
+}
+#col1_index{
+    align-content: center;
+    min-height: 200px
+}
+#p-roman{
+    font-family: 'Times New Roman', system-ui; font-size: 24px; color: white;
+}
+#p-romanDesc{
+    font-family: 'Times New Roman', system-ui;
+    font-size: medium;
+    color: white;
+}
+#col2{
+    align-content: center;
+    min-height: 200px;
+}
+#p-egypt{
+    font-family: Papyrus, serif;
+    font-size: 24px;
+    margin-bottom: 0;
+    color: white;
+}
+#col3{
+    align-content: center;
+    min-height: 200px;
+}
+#menu_buttons-row{
+    height: 100%;
+}
+.container{
+    width: 50%;
+    height: 60%;
+    position: relative;
+    top: 15%;
+    border-style: solid;
+    border-radius: 15px;
+    border-color: midnightblue;
+    border-width: 5px;
+    padding: 0;
+
+}
+.buttons{
+    background-color: orange;
+    border-color: midnightblue;
+    border-radius: 15px;
+    padding: 0;
+    margin: 0;
+}
+.buttons:hover{
+    transform: translateY(-8px);
+    box-shadow:0 18px 50px rgba(2,6,23,0.6);
+}
+.buttons3:hover{
+    transform: translateY(-8px);
+    box-shadow:0 18px 50px rgba(2,6,23,0.6);
+
+}
+#prevCol{
+    display: flex;
+    justify-content: center;
+}
+#nextCol{
+    display: flex;
+    justify-content: center;
+}
+#menu-row{
+    height: 100%;
+    border-radius: 15px;
+}
+#menu-col1{
+    height: 100%;
+    padding: 0;
+}
+#menu-col2{
+    height: 100%;
+}
+.menu_description{
+    font-family: Papyrus, sans-serif;
+    font-size: 18px;
+    position: relative;
+    top: -20%;
+    height: fit-content;
+}
+#menu-button{
+    font-size: 24px;
+    font-family: Tagesschrift, sans-serif;
+}
+#menu-description{
+    color: white;
+}
+#menu-price{
+    color: white;
+}
+#menu-image{
+    height: 100%;
+    width: 100%;
+}
+#menu_buttons-container{
+    height: 5%;
+    position: relative;
+    top: 3%;
+}
+.card{
+    height: 100%;
+    position: relative;
+    top: 5px;
+    align-content: space-evenly;
+}
+.card-img-top{
+    height: 85%;
+
+
 }
