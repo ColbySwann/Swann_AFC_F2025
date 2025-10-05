@@ -12,7 +12,7 @@ btn[0].addEventListener("click", ()=>{
                 let result = response.json()
                 return result;
             }else{
-                throw new Error("I broke it")
+                throw new ErrorPage("I broke it")
             }
         })
         .then((parsedData) => {

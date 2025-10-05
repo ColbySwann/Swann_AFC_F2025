@@ -7,7 +7,7 @@ import App from './App.jsx'
 
 import Splash from "./pages/Splash";
 import MenuPage from "./pages/MenuPage";
-import Hiring from "./pages/Hiring"
+import Hiring from "./pages/HiringPage.jsx"
 import ErrorPage from "./pages/ErrorPage"
 
 

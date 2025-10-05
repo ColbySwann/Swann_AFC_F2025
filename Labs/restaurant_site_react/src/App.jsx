@@ -2,7 +2,7 @@ import React from "react";
 import {Routes, Route, Outlet} from 'react-router-dom'
 import Home from './pages/Splash'
 import MenuPage from './pages/MenuPage'
-import Hiring from './pages/Hiring'
+import Hiring from './pages/HiringPage.jsx'
 import Navbar from './components/AppNavbar';
 import NavBar from "./components/AppNavbar";
 
