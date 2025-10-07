@@ -1,252 +1,297 @@
 import {Button, Form, FormFeedback, FormGroup, Input, Label} from "reactstrap";
-import {useState} from "react";
+import {Controller, useForm} from "react-hook-form";
+import * as yup from "yup"
+import { yupResolver } from "@hookform/resolvers/yup/src/index.js";
 
 
 const HiringForm = () => {
-    const [formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
-        address1: '',
-        city: '',
-        state: '',
-        age: 21,
-        phone: '',
-        email: '',
-        password: '',
+    const userSchema = yup.object({
+    firstName: yup
+        .string()
+        .required("Please enter first name")
+        .max(10, "Must be less than 10 characters"),
+    lastName: yup
+        .string()
+        .max(20, "Must be less than 20 characters")
+        .optional(),
+    address1: yup
+        .string()
+        .required("Address is required")
+        .max(50, "Address is too long"),
+    city: yup
+        .string()
+        .required("City is required")
+        .max(29, "City is too long"),
+    state: yup
+        .string()
+        .required("State is required")
+        .oneOf(["TX", "TN", "AL"], "Must be one of the three states"),
+    age: yup
+        .number()
+        .nullable()
+        .integer("Age must be a whole number")
+        .typeError("Age is required")
+        .min(25, "You are not old enough")
+        .max(89, "You are too old")
+        .required("Age is required"),
+    phone: yup
+        .string()
+        .required("Phone is required")
+        .matches(/^\d{3}-\d{3}-\d{4}$/, "Must Be in the XXX-XXX-XXXX format"),
+    email: yup
+        .string()
+        .email("Invalid email address")
+        .required("This field is required"),
+    password: yup
+        .string()
+        .required("Password is required")
+        .min(8, "Minimum 8 characters")
+        .max(12, "Maximum 12 characters")
+        .matches(/[A-Z]/, "Must contain one uppercase letter")
+        .matches(/[a-z]/, "Must contain one lowercase letter")
+        .matches(/[0-9]/, "Must contain one number")
+        .matches(/[@$!%*?&]/, "Must contain one special character"),
+    married: yup
+        .string()
+        .oneOf(["single", "married"])
+        .required()
+})
+
+const {control, handleSubmit, reset, setValue, formState: {errors, isSubmitSuccessful}} = useForm({
+    defaultValues: {
+        firstName: "",
+        lastName: "",
+        address1: "",
+        city: "",
+        state: "",
+        age: 25,
+        phone: "",
+        email: "",
+        password: "",
         married: 'single'
-    });
+    },
+    mode: "onBlur",
+    resolver: yupResolver(userSchema)
+});
 
-    const [touched, setTouched] = useState({});
-
-    const handleChange = (e) => {
-        const {name, value} = e.target;
-        setFormData({...formData, [name]: value});
-    };
-
-    const handleBlur = (e) => {
-        const { name } = e.target;
-        setTouched({...touched, [name]: true});
+    const onSubmit = (data) => {
+        alert("Application submitted successfully")
+        console.log(data)
+        reset();
     }
 
-    const handleReset = () => {
-        setFormData({
-            firstName: '',
-            lastName: '',
-            address1: '',
-            city: '',
-            state: '',
-            age: 21,
-            phone: '',
-            email: '',
-            password: '',
-            married: 'single'
-        });
-        setTouched({});
-    };
-
-    const validate = () => {
-        const errors = {};
-        if (!formData.firstName || formData.firstName.length > 20) errors.firstName = 'Required (1–20 characters)';
-        if (formData.lastName && formData.lastName.length > 20) errors.lastName = 'Max 20 characters';
-        if (!formData.address1 || formData.address1.length > 50) errors.address1 = 'Required, max 50 characters';
-        if (!formData.city || formData.city.length > 29) errors.city = 'Required, max 29 characters';
-        if (!formData.state) errors.state = 'Select a state';
-        if (formData.age < 21 || formData.age > 99) errors.age = 'Must be between 21–99';
-        if (!formData.phone) errors.phone = 'Required';
-        if (!formData.email.match(/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/)) errors.email = 'Invalid email';
-        if (!formData.password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&]).{8,12}$/))
-            errors.password = '8–12 chars, 1 uppercase, 1 lowercase, 1 number, 1 symbol';
-        return errors;
-    }
-
-    const errors = validate();
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (Object.keys(errors).length === 0){
-            alert("Application submitted successfully");
-        }else{
-            alert("Please fix the errors before submitting. ");
-        }
+    const handleChange = (evt) => {
+    console.log(`${evt.target.name}: ${evt.target.value}`);
+        setValue(evt.target.name, evt.target.value);
     }
 
     return(
-        <Form noValidate onSubmit={handleSubmit} className={"bg-dark"}>
+        <Form onSubmit={handleSubmit(onSubmit)} className={"bg-dark"}>
             <FormGroup>
                 <Label for={"firstName"}>First Name: </Label>
-                <Input
-                    id={"firstName"}
+                <Controller
                     name={"firstName"}
-                    type={"text"}
-                    value={formData.firstName}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    invalid={touched.firstName && !!errors.firstName}
-                    placeholder={"Enter your first name"}
-                    required
+                    control={control}
+                    render={({ field }) => (
+                        <Input
+                            {...field}
+                            id={"firstName"}
+                            invalid={!!errors.firstName}
+                            onChange={handleChange}
+                            placeholder={"Enter your first name"}
+                        />
+                    )}
                 />
-                <FormFeedback>{errors.firstName}</FormFeedback>
+                <FormFeedback>{errors.firstName?.message}</FormFeedback>
             </FormGroup>
 
             <FormGroup>
                 <Label for={"lastName"}>Last Name: </Label>
-                <Input
-                    id={"lastName"}
+                <Controller
                     name={"lastName"}
-                    type={"text"}
-                    value={formData.lastName}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    invalid={touched.lastName && !!errors.lastName}
-                    placeholder={"Enter your last name (optional)"}
+                    control={control}
+                    render={({ field }) => (
+                        <Input
+                            {...field}
+                            id={"lastName"}
+                            invalid={!!errors.lastName}
+                            onChange={handleChange}
+                            placeholder={"Enter your last name"}
+                        />
+                    )}
                 />
-                <FormFeedback>{errors.lastName}</FormFeedback>
+                <FormFeedback>{errors.lastName?.message}</FormFeedback>
             </FormGroup>
 
             <FormGroup>
                 <Label for={"address1"}>Address 1: </Label>
-                <Input
-                    id={"address1"}
-                    name={"address1"}
-                    type={"text"}
-                    value={formData.address1}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    invalid={touched.address1 && !!errors.address1}
-                    placeholder={"Enter your address"}
-                    required
+                <Controller
+                    name="address1"
+                    control={control}
+                    render={({ field }) => (
+                        <Input
+                            {...field}
+                            id="address1"
+                            invalid={!!errors.address1}
+                            onChange={handleChange}
+                            placeholder="Enter your address"
+                        />
+                    )}
                 />
-                <FormFeedback>{errors.address1}</FormFeedback>
+                <FormFeedback>{errors.address1?.message}</FormFeedback>
             </FormGroup>
 
             <FormGroup>
                 <Label for={"city"}>City: </Label>
-                <Input
-                    id={"city"}
-                    name={"city"}
-                    type={"text"}
-                    value={formData.city}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    invalid={touched.city && !!errors.city}
-                    placeholder={"Enter your city"}
-                    required
+                <Controller
+                    name="city"
+                    control={control}
+                    render={({ field }) => (
+                        <Input
+                            {...field}
+                            id="city"
+                            invalid={!!errors.city}
+                            onChange={handleChange}
+                            placeholder="Enter your city"
+                        />
+                    )}
                 />
-                <FormFeedback>{errors.city}</FormFeedback>
+                <FormFeedback>{errors.city?.message}</FormFeedback>
             </FormGroup>
 
             <FormGroup>
                 <Label for={"state"}>State: </Label>
-                <Input
-                    id={"state"}
-                    name={"state"}
-                    type={"select"}
-                    value={formData.state}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    invalid={touched.state && !!errors.state}
-                    required
-                >
-                    <option value="">Select</option>
-                    <option value={"TX"}>TX</option>
-                    <option value="TN">TN</option>
-                    <option value="AL">AL</option>
-                </Input>
-                <FormFeedback>{errors.state}</FormFeedback>
+                <Controller
+                    name="state"
+                    control={control}
+                    render={({ field }) => (
+                        <Input id="state" type="select" {...field} invalid={!!errors.state} onChange={handleChange}>
+                            <option value="">Select</option>
+                            <option value="TX">TX</option>
+                            <option value="TN">TN</option>
+                            <option value="AL">AL</option>
+                        </Input>
+                    )}
+                />
+                <FormFeedback>{errors.state?.message}</FormFeedback>
             </FormGroup>
 
             <FormGroup>
                 <Label for={"age"}>Age: </Label>
-                <Input
-                    id={"age"}
-                    name={"age"}
-                    type={"number"}
-                    value={formData.age}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    invalid={touched.age && !!errors.age}
-                    min="21"
-                    max="99"
-                    required
+                <Controller
+                    name="age"
+                    control={control}
+                    render={({ field }) => (
+                        <Input
+                            {...field}
+                            id="age"
+                            type="number"
+                            min={25}
+                            max={89}
+                            invalid={!!errors.age}
+                            onChange={handleChange}
+                        />
+                    )}
                 />
-                <FormFeedback>{errors.age}</FormFeedback>
+                <FormFeedback>{errors.age?.message}</FormFeedback>
             </FormGroup>
 
             <FormGroup>
                 <Label for={"phone"}>Phone Number: </Label>
-                <Input
-                    id={"phone"}
-                    name={"phone"}
-                    type={"tel"}
-                    value={formData.phone}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    invalid={touched.phone && !!errors.phone}
-                    placeholder={"Enter your phone number"}
-                    required
+                <Controller
+                    name="phone"
+                    control={control}
+                    render={({ field }) => (
+                        <Input
+                            {...field}
+                            id="phone"
+                            type="tel"
+                            invalid={!!errors.phone}
+                            onChange={handleChange}
+                            placeholder="123-456-7890"
+                        />
+                    )}
                 />
-                <FormFeedback>{errors.phone}</FormFeedback>
+                <FormFeedback>{errors.phone?.message}</FormFeedback>
             </FormGroup>
 
             <FormGroup>
                 <Label for={"email"}>Email: </Label>
-                <Input
-                    id={"email"}
-                    name={"email"}
-                    type={"email"}
-                    value={formData.email}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    invalid={touched.email && !!errors.email}
-                    placeholder={"Enter your email"}
-                    required
+                <Controller
+                    name="email"
+                    control={control}
+                    render={({ field }) => (
+                        <Input
+                            {...field}
+                            id="email"
+                            type="email"
+                            invalid={!!errors.email}
+                            onChange={handleChange}
+                            placeholder="Enter your email"
+                        />
+                    )}
                 />
-                <FormFeedback>{errors.email}</FormFeedback>
+                <FormFeedback>{errors.email?.message}</FormFeedback>
             </FormGroup>
 
             <FormGroup>
                 <Label for={"password"}>Password: </Label>
-                <Input
-                    id={"password"}
-                    name={"password"}
-                    type={"password"}
-                    value={formData.password}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    invalid={touched.password && !!errors.password}
-                    placeholder={"Enter password (8-12 chars"}
-                    required
+                <Controller
+                    name="password"
+                    control={control}
+                    render={({ field }) => (
+                        <Input
+                            {...field}
+                            id="password"
+                            type="password"
+                            invalid={!!errors.password}
+                            onChange={handleChange}
+                            placeholder="Enter password (8–12 chars)"
+                        />
+                    )}
                 />
-                <FormFeedback>{errors.password}</FormFeedback>
+                <FormFeedback>{errors.password?.message}</FormFeedback>
             </FormGroup>
 
             <FormGroup tag="fieldset" className="mt-3">
                 <legend>Marital Status</legend>
-                <FormGroup check>
-                    <Input
-                        name={"married"}
-                        type={"radio"}
-                        value={"single"}
-                        checked={formData.married === 'single'}
-                        onChange={handleChange}
-                    />{' '}
-                    <Label check>Single</Label>
-                </FormGroup>
-                <FormGroup check>
-                    <Input
-                        name={"married"}
-                        type={"radio"}
-                        value={"married"}
-                        checked={formData.married === 'married'}
-                        onChange={handleChange}
-                    />{' '}
-                    <Label check>Married</Label>
-                </FormGroup>
+                <Controller
+                    name="married"
+                    control={control}
+                    render={({ field }) => (
+                        <>
+                            <FormGroup check>
+                                <Input
+                                    type="radio"
+                                    id="single"
+                                    value="single"
+                                    checked={field.value === "single"}
+                                    onChange={() => field.onChange("single")}
+                                />{" "}
+                                <Label check htmlFor="single">
+                                    Single
+                                </Label>
+                            </FormGroup>
+                            <FormGroup check>
+                                <Input
+                                    type="radio"
+                                    id="married"
+                                    value="married"
+                                    checked={field.value === "married"}
+                                    onChange={() => field.onChange("married")}
+                                />{" "}
+                                <Label check htmlFor="married">
+                                    Married
+                                </Label>
+                            </FormGroup>
+                        </>
+                    )}
+                />
             </FormGroup>
 
             <div className="d-flex justify-content-between mt-4">
                 <Button type="submit" color={"primary"}>Submit</Button>
-                <Button type={"reset"} color={"secondary"} onClick={handleReset}>Reset</Button>
+                <Button type={"reset"} color={"secondary"} onClick={() => reset(defaultValues)}>Reset</Button>
             </div>
 
         </Form>
